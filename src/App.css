@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  background: rgb(0,46,255);
+  background: linear-gradient(180deg, rgba(0,46,255,1) 0%, rgba(80,101,255,1) 49%, rgba(0,46,255,1) 100%);
+  width: 100vw;
+  height: 100vh;
+}
+
+p {
+  -webkit-user-select: none;        
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+span {
+  -webkit-user-select: none;        
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pp-img {
+  width: 5%;
+  margin-bottom: 0.3rem;
+  pointer-events: none;
+}
+
+.App {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 31rem;
+  max-height: 47rem;
+  font-size: 1.5rem;
+  background-color: #2191FB;
+  border-radius: 10px;
+}
+
+.row {
+  text-align: center;
+  justify-content: center;
+}
+
+.col-sm-1 {
+  padding: 0;
+}
+
+.col-sm-3 {
+  padding: 0;
+}
+
+#pointsNeeded {
+  background-color: #f91acd;
+}
+
+#coinsNeeded {
+  background-color: #febe20;
+}
+
+.rotate-center {
+	-webkit-animation: rotate-center 2s linear infinite both;
+	        animation: rotate-center 2s linear infinite both;
+}
+
+#brawl-logo {
+  width: 10%;
+  -webkit-user-select: none;        
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-animation: rotate-center 3s linear infinite both;
+	        animation: rotate-center 3s linear infinite both;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+span {
+  background: #f91acd;
+  border-radius: 50px;
+}
+
+.coins {
+  background: #febe20;
+}
+
+.gold-img {
+  width: 7%;
+  pointer-events: none;
+  margin-bottom: 0.5rem;
+}
+
+.buttons {
+  width: 100%;
+  text-align: center;
+}
+
+.buttons .btn {
+  width: 50%;
+}
