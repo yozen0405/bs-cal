@@ -3,7 +3,6 @@ import './App.css';
 
 const pointsNeeded = [20, 30, 50, 80, 130, 210, 340, 550]
 const goldNeeded = [20, 35, 75, 140, 290, 480, 800, 1250]
-const logo = require('./assets/brawl-logo.png');
 
 class App extends React.Component {
   constructor (props) {
@@ -13,8 +12,9 @@ class App extends React.Component {
       coins: 0,
       level: 1,
       desiredLevel: 9,
-      points: 1410,
-      gold: 0
+      points: "-",
+      gold: "-",
+      coinStatus: "Coins Needed"
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -28,8 +28,8 @@ class App extends React.Component {
       coins: 0,
       level: 1,
       desiredLevel: 9,
-      points: 1410,
-      gold: 0
+      points: "-",
+      gold: "-"
     })
   }
 
@@ -45,10 +45,19 @@ class App extends React.Component {
       points += pointsNeeded[i];
       gold += goldNeeded[i]
     }
-    this.setState({
-      points: points - pp,
-      gold: gold - coins
-    })
+    if (gold - coins < 0) {
+      this.setState({
+        points: points - pp,
+        gold: coins - gold,
+        coinStatus: "Coins Leftover"
+      })
+    } else {
+      this.setState({
+        points: points - pp,
+        gold: gold - coins,
+        coinStatus: "Coins Needed"
+      })
+    }
   }
 
   handleClick (e) {
@@ -108,61 +117,46 @@ class App extends React.Component {
     render() {
       return (
         <div id="App" className="App container-fluid">
-          <div class="row"><img id="brawl-logo" src="https://i.imgur.com/RSS9cDW.png" alt="brawl-stars-logo"></img></div>
-          <p>Desired Level</p>
+          <div class="row mt-2"><img id="brawl-logo" src="https://i.imgur.com/RSS9cDW.png" alt="brawl-stars-logo"></img></div>
           <div class="row">
-            <div onClick={this.handleClick} class="col-sm-3"><i id="desired-level-down" onClick={this.handleClick} class="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
-            <div class="col-sm-1"><p>{this.state.desiredLevel}</p></div>
-            <div onClick={this.handleClick} class="col-sm-3"><i id="desired-level-up" onClick={this.handleClick} class="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
+            <p class="col-6">Current Level</p>
+            <p class="col-6">Desired Level</p>
           </div>
-          <p>Current Level</p>
           <div class="row">
-            <div class="col-sm-3"><i id="level-down" onClick={this.handleClick} class="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
-            <div class="col-sm-1"><p>{this.state.level}</p></div>
-            <div class="col-sm-3"><i id="level-up" onClick={this.handleClick} class="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
-            
+            <div class="col-2"><i id="level-down" onClick={this.handleClick} class="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
+            <div class="col-2"><p>{this.state.level}</p></div>
+            <div class="col-2"><i id="level-up" onClick={this.handleClick} class="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
+            <div onClick={this.handleClick} class="col-2"><i id="desired-level-down" onClick={this.handleClick} class="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
+            <div class="col-2"><p>{this.state.desiredLevel}</p></div>
+            <div onClick={this.handleClick} class="col-2"><i id="desired-level-up" onClick={this.handleClick} class="fa fa-arrow-circle-up" aria-hidden="true"></i></div> 
           </div>
           <p id="pp">Current Power Points: <i onClick={this.handleClick} id="ppMinus" class="pp-group fa fa-minus-circle" aria-hidden="true"></i>  {this.state.pp}/{pointsNeeded[this.state.level - 1]} <i onClick={this.handleClick} id="ppPlus" class="pp-group fa fa-plus-circle" aria-hidden="true"></i></p>
           <div id="row">
-            <span onClick={this.handleClick} id="5" class="col-sm-2 pp"><img class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>5</span>
-            <span onClick={this.handleClick} id="10" class="col-sm-2 pp"><img class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>10</span>
-            <span onClick={this.handleClick} id="20" class="col-sm-2 pp"><img class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>20</span>
-            <span onClick={this.handleClick} id="50" class="col-sm-2 pp"><img class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>50</span>
-            <span onClick={this.handleClick} id="100" class="col-sm-2 pp"><img class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>100</span>
+            <span onClick={this.handleClick} id="5" class="col-2 pp"><img alt="5-points" class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>5</span>
+            <span onClick={this.handleClick} id="10" class="col-2 pp"><img alt="10-points" class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>10</span>
+            <span onClick={this.handleClick} id="20" class="col-2 pp"><img alt="20-points" class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>20</span>
+            <span onClick={this.handleClick} id="50" class="col-2 pp"><img alt="50-points" class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>50</span>
+            <span onClick={this.handleClick} id="100" class="col-2 pp"><img alt="100-points" class="pp-img" src="https://i.imgur.com/615DAgg.png"></img>100</span>
           </div>
           <p id="coin">Current Coins: <i onClick={this.handleClick} id="coinMinus" class="coin-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.coins} <i onClick={this.handleClick} id="coinPlus" class="coin-group fa fa-plus-circle" aria-hidden="true"></i></p>
           <div id="row">
-            <span onClick={this.handleClick} class="col-sm-2 coins"><img class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>10</span>
-            <span onClick={this.handleClick} class="col-sm-2 coins"><img class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>20</span>
-            <span onClick={this.handleClick} class="col-sm-2 coins"><img class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>50</span>
-            <span onClick={this.handleClick} class="col-sm-2 coins"><img class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>100</span>
-            <span onClick={this.handleClick} class="col-sm-2 coins"><img class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>1000</span>
+            <span onClick={this.handleClick} class="col-2 coins"><img alt="10-coins"class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>10</span>
+            <span onClick={this.handleClick} class="col-2 coins"><img alt="20-coins" class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>20</span>
+            <span onClick={this.handleClick} class="col-2 coins"><img alt="50-coins" class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>50</span>
+            <span onClick={this.handleClick} class="col-2 coins"><img alt="100-coins" class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>100</span>
+            <span onClick={this.handleClick} class="col-2 coins"><img alt="1000-coins" class="gold-img" src="https://i.imgur.com/ETAyF4k.png"></img>1000</span>
           </div>
           <div class="row buttons ml-1">
-          <button id="reset" onClick={this.reset} class="btn btn-danger btn-sm my-3">Reset</button>
-          <button id="calculate" onClick={this.calculatePoints} class="btn btn-primary btn-sm my-3">Calculate</button>
+          <button id="reset" onClick={this.reset} class="btn btn-danger my-3">Reset</button>
+          <button id="calculate" onClick={this.calculatePoints} class="btn btn-primary my-3">Calculate</button>
           </div>
-          <p>Points Needed</p>
+          <p>Power Points Needed</p>
           <p id="pointsNeeded">{this.state.points}</p>
-          <p>Coins Needed</p>
+          <p>{this.state.coinStatus}</p>
           <p id="coinsNeeded">{this.state.gold}</p>
         </div> 
       );
     }
 }
-
-/*
-<div id="App" className="App container-fluid">
-          <label>Current Level</label>
-          <input class="form-control" id="level" type="number" onChange={this.handleChange} min="1" max="8"></input>
-          <label>Desired Level</label>
-          <input class="form-control" id="desired-level" type="number" onChange={this.handleChange} min={this.state.level + 1} max="9"></input>
-          <label>Current Power Points</label>
-          <input class="form-control" id="pp" type="number"  onChange={this.handleChange} min="0" max={pointsNeeded[this.state.level - 1]}></input>
-          <button class="btn-primary" onChange="">Calculate</button>
-          <p>Points Needed</p>
-          <p id="pointsNeeded">{this.state.points}</p>
-        </div> 
-*/
 
 export default App;
