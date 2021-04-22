@@ -1,6 +1,6 @@
 {
-  "homepage": "https://dletulle.github.io/brawl-stars-power-points-calculator",
-  "name": "brawl-stars-power-points-calculator",
+  "homepage": "https://dletulle.github.io/brawl-stars-power-level-calculator",
+  "name": "brawl-stars-power-level-calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
