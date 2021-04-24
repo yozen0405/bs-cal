@@ -6,6 +6,7 @@
   text-align: center;
   color: white;
   font-family: 'Oswald', sans-serif;
+  transition: 0.3s;
 }
 
 body {
@@ -31,7 +32,7 @@ span {
 
 .pp-img {
   width: 5%;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
   pointer-events: none;
 }
 
@@ -42,7 +43,6 @@ span {
   transform: translate(-50%, -50%);
   max-width: 31rem;
   max-height: 47rem;
-  min-width: 31.25rem;
   font-size: 1.5rem;
   background-color: #2191FB;
   border-radius: 10px;
@@ -108,6 +108,47 @@ span {
 span {
   background: #f91acd;
   border-radius: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+
+
+span:hover img  {
+    -webkit-animation: rotate-img 1s ease-in-out both;
+            animation: rotate-img 1s ease-in-out both;
+}
+
+span:hover {
+  color: #e3e9ff;
+}
+
+@-webkit-keyframes rotate-img {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate-img {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+.img-buttons {
+  font-size: 1.3rem;
 }
 
 .coins {
@@ -115,16 +156,29 @@ span {
 }
 
 .gold-img {
-  width: 7%;
+  width: 6.5%;
   pointer-events: none;
   margin-bottom: 0.5rem;
 }
 
 .buttons {
   width: 100%;
-  text-align: center;
+  margin: 0;
 }
 
 .buttons .btn {
   width: 50%;
+}
+
+@media only screen and (max-width: 24rem) {
+  img {
+    display: none;
+  }
+  * {
+    font-size: 1rem;
+  }
+}
+
+.fa:hover {
+  color: #bfccff;
 }
