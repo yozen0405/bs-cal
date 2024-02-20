@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import starpowerImg from './assets/starpower.png';
-import gadgetImg from './assets/gadget.png';
 import hyperchargeImg from './assets/hypercharge.png';
 import gearSuperRareImg from './assets/gear_super_rare.png';
 import gearEpicImg from './assets/gear_epic.png';
@@ -183,10 +181,10 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-6">
-            <p id="coin"><img class="pp-img" src={gadgetImg}></img><i onClick={this.handleClick} id="Minus" class="gadget-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.gadget} <i onClick={this.handleClick} id="Plus" class="gadget-group fa fa-plus-circle" aria-hidden="true"></i></p>
-            <p id="coin"><img class="pp-img" src={starpowerImg}></img><i onClick={this.handleClick} id="Minus" class="starpower-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.starpower} <i onClick={this.handleClick} id="Plus" class="starpower-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src="https://i.imgur.com/Pz8b7Cc.png"></img><i onClick={this.handleClick} id="Minus" class="gadget-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.gadget} <i onClick={this.handleClick} id="Plus" class="gadget-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src="https://i.imgur.com/Endw0y1.png"></img><i onClick={this.handleClick} id="Minus" class="starpower-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.starpower} <i onClick={this.handleClick} id="Plus" class="starpower-group fa fa-plus-circle" aria-hidden="true"></i></p>
             <div className="row" style={{ alignItems: 'center' }}>
-            <img class="pp-img" src={hyperchargeImg}></img>
+            <img class="pp-img" src="https://i.imgur.com/ZaFLsIB.png"></img>
               <label className="switch">
                 <input type="checkbox" checked={this.state.buyHypercharge} onChange={this.handleHyperchargeChange} />
                 <span className="slider round"></span>
@@ -194,9 +192,9 @@ class App extends React.Component {
             </div>
           </div>
           <div className="col-6">
-            <p id="coin"><img class="pp-img" src={gearSuperRareImg}></img><i onClick={this.handleClick} id="Minus" class="superRareGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.superRaregear} <i onClick={this.handleClick} id="Plus" class="superRareGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
-            <p id="coin"><img class="pp-img" src={gearEpicImg}></img><i onClick={this.handleClick} id="Minus" class="epicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.epicgear} <i onClick={this.handleClick} id="Plus" class="epicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
-            <p id="coin"><img class="pp-img" src={gearMythicImg}></img><i onClick={this.handleClick} id="Minus" class="mythicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.mythicgear} <i onClick={this.handleClick} id="Plus" class="mythicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src="https://i.imgur.com/qwYGpd7.png"></img><i onClick={this.handleClick} id="Minus" class="superRareGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.superRaregear} <i onClick={this.handleClick} id="Plus" class="superRareGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src="https://i.imgur.com/UcskqXK.png"></img><i onClick={this.handleClick} id="Minus" class="epicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.epicgear} <i onClick={this.handleClick} id="Plus" class="epicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src="https://i.imgur.com/ka7pWe3.png"></img><i onClick={this.handleClick} id="Minus" class="mythicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.mythicgear} <i onClick={this.handleClick} id="Plus" class="mythicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
           </div>
         </div>
         <div className="row buttons">
