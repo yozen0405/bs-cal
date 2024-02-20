@@ -1,6 +1,6 @@
 {
-  "homepage": "https://yozen0405.github.io/brawl-stars-power-level-calculator",
-  "name": "brawl-stars-power-level-calculator",
+  "homepage": "https://yozen0405.github.io/bs-cal",
+  "name": "bs-cal",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
