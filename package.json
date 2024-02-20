@@ -1,5 +1,5 @@
 {
-  "homepage": "https://dletulle.github.io/brawl-stars-power-level-calculator",
+  "homepage": "https://yozen0405.github.io/brawl-stars-power-level-calculator",
   "name": "brawl-stars-power-level-calculator",
   "version": "0.1.0",
   "private": true,
@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
@@ -39,6 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.2.3"
   }
 }

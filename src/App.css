@@ -10,10 +10,11 @@
 }
 
 body {
-  background: rgb(0,46,255);
-  background: linear-gradient(180deg, rgba(0,46,255,1) 0%, rgba(80,101,255,1) 49%, rgba(0,46,255,1) 100%);
+  background: url('https://images7.alphacoders.com/127/1279154.jpg') fixed;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
+  backdrop-filter: blur(5px);
 }
 
 p {
@@ -31,8 +32,9 @@ span {
 }
 
 .pp-img {
-  width: 5%;
-  margin-bottom: 0.4rem;
+  width: 17%;
+  margin: 0.3rem;
+  margin-bottom: 0.6rem;
   pointer-events: none;
 }
 
@@ -44,7 +46,7 @@ span {
   max-width: 31rem;
   max-height: 47rem;
   font-size: 1.5rem;
-  background-color: #2191FB;
+  background: linear-gradient(135deg, #0047ab, #6b007f);
   border-radius: 10px;
 }
 
@@ -114,8 +116,6 @@ span {
   padding-bottom: 2px;
 }
 
-
-
 span:hover img  {
     -webkit-animation: rotate-img 1s ease-in-out both;
             animation: rotate-img 1s ease-in-out both;
@@ -167,7 +167,7 @@ span:hover {
 }
 
 .buttons .btn {
-  width: 50%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 24rem) {
@@ -182,3 +182,70 @@ span:hover {
 .fa:hover {
   color: #bfccff;
 }
+
+.hypercharge-label {
+  font-size: inherit; /* 使用預設字體大小 */
+  color: inherit; /* 使用預設文字顏色 */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 17px; /* 添加半徑以使其不再是圓形 */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked + .slider {
+  background-color: #3CD137;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #3CD137;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
