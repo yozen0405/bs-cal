@@ -69,7 +69,7 @@ class App extends React.Component {
         pp: newpp,
         level: newLevel
       }));
-    } else if (e.target.id === "level-down" && level >= 1) {
+    } else if (e.target.id === "level-down" && level - 1 >= 1) {
       const newcoins = coins + coinsNeeded[level];
       const newpp = pp + ppNeeded[level];
       const newLevel = level - 1;
@@ -89,7 +89,7 @@ class App extends React.Component {
         pp: newpp,
         desiredLevel: newDesiredLevel
       }));
-    } else if (e.target.id === "desired-level-down" && desiredLevel - 1 >= level && desiredLevel > 0) {
+    } else if (e.target.id === "desired-level-down" && desiredLevel - 1 >= level && desiredLevel - 1 > 0) {
       const newcoins = coins - coinsNeeded[desiredLevel];
       const newpp = pp - ppNeeded[desiredLevel];
       const newDesiredLevel = desiredLevel - 1;
@@ -119,7 +119,7 @@ class App extends React.Component {
         coins: coins + coinObj[e.target.id],
         starpower: starpower + starpowerObj[e.target.id]
       })
-    } else if (e.target.classList[0] == "superRareGear-group") {
+    } else if (e.target.classList[0] === "superRareGear-group") {
       const coinObj = { Plus: 1000, Minus: -1000 };
       const gearObj = { Plus: 1, Minus: -1 };
       if (superRaregear + gearObj[e.target.id] < 0 || superRaregear + gearObj[e.target.id] > 6) {
@@ -129,7 +129,7 @@ class App extends React.Component {
         coins: coins + coinObj[e.target.id],
         superRaregear: superRaregear + gearObj[e.target.id]
       })
-    } else if (e.target.classList[0] == "epicGear-group") {
+    } else if (e.target.classList[0] === "epicGear-group") {
       const coinObj = { Plus: 1500, Minus: -1500 };
       const gearObj = { Plus: 1, Minus: -1 };
       if (epicgear + gearObj[e.target.id] < 0 || epicgear + gearObj[e.target.id] > 1) {
@@ -139,7 +139,7 @@ class App extends React.Component {
         coins: coins + coinObj[e.target.id],
         epicgear: epicgear + gearObj[e.target.id]
       })
-    } else if (e.target.classList[0] == "mythicGear-group") {
+    } else if (e.target.classList[0] === "mythicGear-group") {
       const coinObj = { Plus: 2000, Minus: -2000 };
       const gearObj = { Plus: 1, Minus: -1 };
       if (mythicgear + gearObj[e.target.id] < 0 || mythicgear + gearObj[e.target.id] > 1) {
