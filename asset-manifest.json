@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bs-cal/static/css/main.627effe2.css",
-    "main.js": "/bs-cal/static/js/main.64dc85ab.js",
+    "main.js": "/bs-cal/static/js/main.d6e51bd5.js",
     "static/js/453.ac9eaeec.chunk.js": "/bs-cal/static/js/453.ac9eaeec.chunk.js",
     "static/media/hypercharge.png": "/bs-cal/static/media/hypercharge.9ca91dc41176fb1ec464.png",
     "static/media/brawl_stars_logo.png": "/bs-cal/static/media/brawl_stars_logo.fee3ae58906f9bacbf1e.png",
@@ -12,11 +12,11 @@
     "static/media/gear_epic.png": "/bs-cal/static/media/gear_epic.ff35c825560e2f5cd7bf.png",
     "index.html": "/bs-cal/index.html",
     "main.627effe2.css.map": "/bs-cal/static/css/main.627effe2.css.map",
-    "main.64dc85ab.js.map": "/bs-cal/static/js/main.64dc85ab.js.map",
+    "main.d6e51bd5.js.map": "/bs-cal/static/js/main.d6e51bd5.js.map",
     "453.ac9eaeec.chunk.js.map": "/bs-cal/static/js/453.ac9eaeec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.627effe2.css",
-    "static/js/main.64dc85ab.js"
+    "static/js/main.d6e51bd5.js"
   ]
 }
