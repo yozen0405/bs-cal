@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import starpowerImg from './assets/starpower.png';
+import gadgetImg from './assets/gadget.png';
 import hyperchargeImg from './assets/hypercharge.png';
 import gearSuperRareImg from './assets/gear_super_rare.png';
 import gearEpicImg from './assets/gear_epic.png';
@@ -17,18 +19,18 @@ class App extends React.Component {
       coins: 0,
       level: 1,
       desiredLevel: 1,
-      ppStatus: "Power Points Needed",
-      coinStatus: "Coins Needed",
       gadget: 0,
       starpower: 0,
       superRaregear: 0,
       epicgear: 0,
       mythicgear: 0,
-      buyHypercharge: false
+      buyHypercharge: false,
+      language: "english"
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.reset = this.reset.bind(this);
+    this.changeLanguage = this.changeLanguage.bind(this);
     this.handleHyperchargeChange = this.handleHyperchargeChange.bind(this);
   }
 
@@ -43,8 +45,21 @@ class App extends React.Component {
       superRaregear: 0,
       epicgear: 0,
       mythicgear: 0,
-      buyHypercharge: false
+      buyHypercharge: false,
+      language: "english"
     });
+  }
+
+  changeLanguage() {
+    if (this.state.language == "english") {
+      this.setState({
+        language: "chinese"
+      });
+    } else {
+      this.setState({
+        language: "english"
+      });
+    }
   }
 
   handleClick(e) {
@@ -168,8 +183,8 @@ class App extends React.Component {
       <div id="App" className="App container-fluid">
         <div class="row mt-2"><img id="brawl-logo" src={brawlImg} alt="brawl-stars-logo"></img></div>
         <div className="row">
-          <p className="col-6">Current Level</p>
-          <p className="col-6">Desired Level</p>
+          <p className="col-6">{this.state.language === "english" ? "Current Level" : "當前等級"}</p>
+          <p className="col-6">{this.state.language === "english" ? "Current Level" : "目標等級"}</p>
         </div>
         <div className="row">
           <div className="col-2"><i id="level-down" onClick={this.handleClick} className="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
@@ -181,10 +196,10 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-6">
-            <p id="coin"><img class="pp-img" src="https://i.imgur.com/Pz8b7Cc.png"></img><i onClick={this.handleClick} id="Minus" class="gadget-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.gadget} <i onClick={this.handleClick} id="Plus" class="gadget-group fa fa-plus-circle" aria-hidden="true"></i></p>
-            <p id="coin"><img class="pp-img" src="https://i.imgur.com/Endw0y1.png"></img><i onClick={this.handleClick} id="Minus" class="starpower-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.starpower} <i onClick={this.handleClick} id="Plus" class="starpower-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={gadgetImg}></img><i onClick={this.handleClick} id="Minus" class="gadget-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.gadget} <i onClick={this.handleClick} id="Plus" class="gadget-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={starpowerImg}></img><i onClick={this.handleClick} id="Minus" class="starpower-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.starpower} <i onClick={this.handleClick} id="Plus" class="starpower-group fa fa-plus-circle" aria-hidden="true"></i></p>
             <div className="row" style={{ alignItems: 'center' }}>
-            <img class="pp-img" src="https://i.imgur.com/ZaFLsIB.png"></img>
+            <img class="pp-img" src={hyperchargeImg}></img>
               <label className="switch">
                 <input type="checkbox" checked={this.state.buyHypercharge} onChange={this.handleHyperchargeChange} />
                 <span className="slider round"></span>
@@ -192,17 +207,18 @@ class App extends React.Component {
             </div>
           </div>
           <div className="col-6">
-            <p id="coin"><img class="pp-img" src="https://i.imgur.com/qwYGpd7.png"></img><i onClick={this.handleClick} id="Minus" class="superRareGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.superRaregear} <i onClick={this.handleClick} id="Plus" class="superRareGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
-            <p id="coin"><img class="pp-img" src="https://i.imgur.com/UcskqXK.png"></img><i onClick={this.handleClick} id="Minus" class="epicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.epicgear} <i onClick={this.handleClick} id="Plus" class="epicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
-            <p id="coin"><img class="pp-img" src="https://i.imgur.com/ka7pWe3.png"></img><i onClick={this.handleClick} id="Minus" class="mythicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.mythicgear} <i onClick={this.handleClick} id="Plus" class="mythicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={gearSuperRareImg}></img><i onClick={this.handleClick} id="Minus" class="superRareGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.superRaregear} <i onClick={this.handleClick} id="Plus" class="superRareGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={gearEpicImg}></img><i onClick={this.handleClick} id="Minus" class="epicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.epicgear} <i onClick={this.handleClick} id="Plus" class="epicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={gearMythicImg}></img><i onClick={this.handleClick} id="Minus" class="mythicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.mythicgear} <i onClick={this.handleClick} id="Plus" class="mythicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
           </div>
         </div>
         <div className="row buttons">
-          <button id="reset" onClick={this.reset} className="btn btn-danger my-3">Reset</button>
+          <button id="reset" onClick={this.reset} className="btn btn-danger my-3">{this.state.language === "english" ? "Reset" : "重置"}</button>
+          <button id="reset" onClick={this.changeLanguage} className="btn btn-primary my-3">{this.state.language === "english" ? "中文版(Chinese)" : "English(英文版)"}</button>
         </div>
         <div className="row">
-          <p className="col-6">{this.state.ppStatus}</p>
-          <p className="col-6">{this.state.coinStatus}</p>
+        <p className="col-6">{this.state.language === "english" ? "Power Points Needed" : "能量點數需求"}</p>
+          <p className="col-6">{this.state.language === "english" ? "Coins Needed" : "金幣數量需求"}</p>
         </div>
         <div className="row">
           <p className="col-6" id="pointsNeeded">{this.state.pp}</p>

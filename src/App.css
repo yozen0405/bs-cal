@@ -10,7 +10,7 @@
 }
 
 body {
-  background: url('https://images7.alphacoders.com/127/1279154.jpg') fixed;
+  background: url('./assets/background.jpg') fixed;
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -146,13 +146,12 @@ span:hover {
   }
 }
 
-
 .img-buttons {
   font-size: 1.3rem;
 }
 
 .coins {
-  background: #febe20;
+  background: #9e7612;
 }
 
 .gold-img {
@@ -167,7 +166,7 @@ span:hover {
 }
 
 .buttons .btn {
-  width: 100%;
+  width: 50%;
 }
 
 @media only screen and (max-width: 24rem) {
