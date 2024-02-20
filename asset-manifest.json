@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/bs-cal/static/css/main.6b10015d.css",
-    "main.js": "/bs-cal/static/js/main.d6e51bd5.js",
+    "main.css": "/bs-cal/static/css/main.a0bfae0a.css",
+    "main.js": "/bs-cal/static/js/main.12f55f61.js",
     "static/js/453.ac9eaeec.chunk.js": "/bs-cal/static/js/453.ac9eaeec.chunk.js",
+    "static/media/background.jpg": "/bs-cal/static/media/background.dc8ddfad6ce0b482d13f.jpg",
     "static/media/hypercharge.png": "/bs-cal/static/media/hypercharge.9ca91dc41176fb1ec464.png",
     "static/media/brawl_stars_logo.png": "/bs-cal/static/media/brawl_stars_logo.fee3ae58906f9bacbf1e.png",
     "static/media/starpower.png": "/bs-cal/static/media/starpower.5f02862f9b4321188f6e.png",
@@ -11,12 +12,12 @@
     "static/media/gear_super_rare.png": "/bs-cal/static/media/gear_super_rare.11d17ab19eb4aaef9f7d.png",
     "static/media/gear_epic.png": "/bs-cal/static/media/gear_epic.ff35c825560e2f5cd7bf.png",
     "index.html": "/bs-cal/index.html",
-    "main.6b10015d.css.map": "/bs-cal/static/css/main.6b10015d.css.map",
-    "main.d6e51bd5.js.map": "/bs-cal/static/js/main.d6e51bd5.js.map",
+    "main.a0bfae0a.css.map": "/bs-cal/static/css/main.a0bfae0a.css.map",
+    "main.12f55f61.js.map": "/bs-cal/static/js/main.12f55f61.js.map",
     "453.ac9eaeec.chunk.js.map": "/bs-cal/static/js/453.ac9eaeec.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b10015d.css",
-    "static/js/main.d6e51bd5.js"
+    "static/css/main.a0bfae0a.css",
+    "static/js/main.12f55f61.js"
   ]
 }
