@@ -184,7 +184,7 @@ class App extends React.Component {
         <div class="row mt-2"><img id="brawl-logo" src={brawlImg} alt="brawl-stars-logo"></img></div>
         <div className="row">
           <p className="col-6">{this.state.language === "english" ? "Current Level" : "當前等級"}</p>
-          <p className="col-6">{this.state.language === "english" ? "Current Level" : "目標等級"}</p>
+          <p className="col-6">{this.state.language === "english" ? "Desired Level" : "目標等級"}</p>
         </div>
         <div className="row">
           <div className="col-2"><i id="level-down" onClick={this.handleClick} className="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
