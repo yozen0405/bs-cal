@@ -187,17 +187,18 @@ class App extends React.Component {
           <p className="col-6">{this.state.language === "english" ? "Desired Level" : "目標等級"}</p>
         </div>
         <div className="row">
-          <div className="col-2"><i id="level-down" onClick={this.handleClick} className="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
+          <div className="col-2"><i id="level-down" onClick={this.handleClick} className="fa fa-arrow-circle-down level-button" aria-hidden="true"></i></div>
           <div className="col-2"><p>{this.state.level}</p></div>
-          <div className="col-2"><i id="level-up" onClick={this.handleClick} className="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
-          <div onClick={this.handleClick} className="col-2"><i id="desired-level-down" onClick={this.handleClick} className="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
+          <div className="col-2"><i id="level-up" onClick={this.handleClick} className="fa fa-arrow-circle-up level-button" aria-hidden="true"></i></div>
+          <div onClick={this.handleClick} className="col-2"><i id="desired-level-down" onClick={this.handleClick} className="fa fa-arrow-circle-down level-button" aria-hidden="true"></i></div>
           <div className="col-2"><p>{this.state.desiredLevel}</p></div>
-          <div onClick={this.handleClick} className="col-2"><i id="desired-level-up" onClick={this.handleClick} className="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
+          <div onClick={this.handleClick} className="col-2"><i id="desired-level-up" onClick={this.handleClick} className="fa fa-arrow-circle-up level-button" aria-hidden="true"></i></div>
         </div>
         <div className="row">
           <div className="col-6">
-            <p id="coin"><img class="pp-img" src={gadgetImg}></img><i onClick={this.handleClick} id="Minus" class="gadget-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.gadget} <i onClick={this.handleClick} id="Plus" class="gadget-group fa fa-plus-circle" aria-hidden="true"></i></p>
-            <p id="coin"><img class="pp-img" src={starpowerImg}></img><i onClick={this.handleClick} id="Minus" class="starpower-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.starpower} <i onClick={this.handleClick} id="Plus" class="starpower-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={gadgetImg}></img><i onClick={this.handleClick} id="Minus" class="gadget-group fa fa-minus-circle gears-button" aria-hidden="true"></i> {this.state.gadget} <i onClick={this.handleClick} id="Plus" class="gadget-group fa fa-plus-circle gears-button" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={starpowerImg}></img><i onClick={this.handleClick} id="Minus" class="starpower-group fa fa-minus-circle gears-button" aria-hidden="true"></i> {this.state.starpower} <i onClick={this.handleClick} id="Plus" class="starpower-group fa fa-plus-circle gears-button" aria-hidden="true"></i></p>
+            <p id="coin"></p>
             <div className="row" style={{ alignItems: 'center' }}>
             <img class="pp-img" src={hyperchargeImg}></img>
               <label className="switch">
@@ -207,9 +208,9 @@ class App extends React.Component {
             </div>
           </div>
           <div className="col-6">
-            <p id="coin"><img class="pp-img" src={gearSuperRareImg}></img><i onClick={this.handleClick} id="Minus" class="superRareGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.superRaregear} <i onClick={this.handleClick} id="Plus" class="superRareGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
-            <p id="coin"><img class="pp-img" src={gearEpicImg}></img><i onClick={this.handleClick} id="Minus" class="epicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.epicgear} <i onClick={this.handleClick} id="Plus" class="epicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
-            <p id="coin"><img class="pp-img" src={gearMythicImg}></img><i onClick={this.handleClick} id="Minus" class="mythicGear-group fa fa-minus-circle" aria-hidden="true"></i> {this.state.mythicgear} <i onClick={this.handleClick} id="Plus" class="mythicGear-group fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={gearSuperRareImg}></img><i onClick={this.handleClick} id="Minus" class="superRareGear-group fa fa-minus-circle gears-button" aria-hidden="true"></i> {this.state.superRaregear} <i onClick={this.handleClick} id="Plus" class="superRareGear-group fa fa-plus-circle gears-button" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={gearEpicImg}></img><i onClick={this.handleClick} id="Minus" class="epicGear-group fa fa-minus-circle gears-button" aria-hidden="true"></i> {this.state.epicgear} <i onClick={this.handleClick} id="Plus" class="epicGear-group fa fa-plus-circle gears-button" aria-hidden="true"></i></p>
+            <p id="coin"><img class="pp-img" src={gearMythicImg}></img><i onClick={this.handleClick} id="Minus" class="mythicGear-group fa fa-minus-circle gears-button" aria-hidden="true"></i> {this.state.mythicgear} <i onClick={this.handleClick} id="Plus" class="mythicGear-group fa fa-plus-circle gears-button" aria-hidden="true"></i></p>
           </div>
         </div>
         <div className="row buttons">

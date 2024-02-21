@@ -32,7 +32,7 @@ span {
 }
 
 .pp-img {
-  width: 17%;
+  width: 25%;
   margin: 0.3rem;
   margin-bottom: 0.6rem;
   pointer-events: none;
@@ -169,12 +169,6 @@ span:hover {
   width: 50%;
 }
 
-@media only screen and (max-width: 24rem) {
-  * {
-    font-size: 1rem;
-  }
-}
-
 .fa:hover {
   color: #bfccff;
 }
@@ -189,6 +183,7 @@ span:hover {
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-right: 33px;
 }
 
 .switch input {
@@ -207,7 +202,7 @@ span:hover {
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
-  border-radius: 17px; /* 添加半徑以使其不再是圓形 */
+  border-radius: 17px;
 }
 
 .slider:before {
@@ -244,4 +239,15 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.level-button {
+  font-size: 2.5rem;
+}
+
+.gears-button {
+  margin: 5px;
+  font-size: 1.7rem;
+}
+
+
 
